@@ -45,7 +45,7 @@ docker run -p 50051:50051 kookree-inference
 ```
 
 ### 3. Start Redpanda Kafka Broker
-Make sure you replace the IP address with your local IP (e.g., `192.168.18.75`):
+Make sure you replace the IP address with your local IP in the following code as well as in the producer.py and consumer.py files after bootstrap server (e.g., `192.168.18.75`):
 
 ```bash
 docker run -d --name redpanda -p 9092:9092 -p 9644:9644 redpandadata/redpanda:latest redpanda start --overprovisioned --smp 1 --memory 512M --reserve-memory 0M --node-id 0 --check=false --kafka-addr PLAINTEXT://0.0.0.0:9092 --advertise-kafka-addr PLAINTEXT://192.168.18.75:9092
